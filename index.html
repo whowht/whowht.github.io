@@ -39,17 +39,57 @@
             background-color: rgba(30, 144, 255, 0.4); /* Change background on hover */
         }
 
+        .container {
+            max-width: 800px; /* Limit container width */
+            margin: 0 auto; /* Center container */
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter background */
+        }
+
         footer {
             margin-top: 50px;
             font-size: 14px;
             color: #aaa; /* Light gray for footer text */
         }
+
+        .social-icons {
+            margin-top: 30px; /* Spacing above icons */
+            display: flex;
+            justify-content: center; /* Center icons */
+        }
+
+        .social-icons img {
+            width: 40px; /* Set a fixed width for icons */
+            margin: 0 10px; /* Spacing between icons */
+            transition: transform 0.3s; /* Smooth scaling effect */
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .description {
+            font-size: 18px;
+            margin: 20px 0; /* Spacing above and below description */
+            line-height: 1.6; /* Improved line height for readability */
+        }
     </style>
 </head>
 <body>
     <h1>Social Links</h1>
-    <a href="https://www.instagram.com/anasstaha37" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61550258184763" target="_blank">Facebook</a>
+    <div class="container">
+        <p class="description">Welcome to my social media links! Feel free to connect with me through the platforms below:</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/anasstaha37" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61550258184763" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 - Anass Taha</p>
     </footer>
