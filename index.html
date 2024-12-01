@@ -1,88 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👀</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
-            text-align: center;
-            padding: 50px;
-            margin: 0;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            font-size: 36px;
-            color: #ffffff; /* White text for the header */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-        }
-
-        a {
-            text-decoration: none;
-            color: #1e90ff; /* Bright blue link color */
-            font-size: 20px;
-            margin: 10px;
-            display: inline-block;
-            padding: 10px 15px;
-            border-radius: 5px; /* Rounded corners */
-            background-color: rgba(30, 144, 255, 0.1); /* Light background on links */
-            transition: color 0.3s, background-color 0.3s; /* Smooth transition */
-        }
-
-        a:hover {
-            color: #ffffff; /* Change text color on hover */
-            background-color: rgba(30, 144, 255, 0.4); /* Change background on hover */
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #aaa; /* Light gray for footer text */
-        }
-
-        .social-icons {
-            margin-top: 30px; /* Spacing above icons */
-            display: flex;
-            justify-content: center; /* Center icons */
-        }
-
-        .social-icons img {
-            width: 40px; /* Set a fixed width for icons */
-            margin: 0 10px; /* Spacing between icons */
-            transition: transform 0.3s; /* Smooth scaling effect */
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.1); /* Scale up on hover */
-        }
-
-        .description {
-            font-size: 18px;
-            margin: 20px 0; /* Spacing above and below description */
-            line-height: 1.6; /* Improved line height for readability */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Firebase Site</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js" defer></script>
 </head>
 <body>
-    <h1 style="font-size: 48px; background: linear-gradient(90deg, #1e90ff, #ff6a00); -webkit-background-clip: text; color: transparent; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin-bottom: 20px;">
-    Social Links
-    <div class="container">
-        <div class="social-icons">
-            <a href="https://www.instagram.com/anasstaha37" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61550258184763" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 - Anass Taha</p>
-    </footer>
+  <h1>Welcome to My Dynamic Website</h1>
+
+  <!-- Authentication Section -->
+  <div id="auth">
+    <h2>Sign In</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="signup">Sign Up</button>
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+  </div>
+
+  <!-- Content Section -->
+  <div id="content">
+    <h2>Database Content</h2>
+    <textarea id="data" placeholder="Add some text"></textarea>
+    <button id="save">Save to Firestore</button>
+    <div id="output"></div>
+  </div>
 </body>
 </html>
