@@ -12,6 +12,7 @@ typeText();
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
+  themeToggle.textContent = document.body.classList.contains("light-mode") ? "🌙" : "☀️";
 });
 
 document.getElementById("projects-btn").addEventListener("click", () => {
@@ -23,7 +24,6 @@ document.getElementById("projects-btn").addEventListener("click", () => {
   }
 });
 
-// Social Links Modal
 document.getElementById("social-btn").addEventListener("click", () => {
   const socialLinks = `
     <h2>Connect with me:</h2>
@@ -48,7 +48,3 @@ function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.add("hidden");
 }
-
-// Visitor Counter
-let visitorCount = 0;
-document.getElementById("visitor-counter").textContent = `Visitors: ${++visitorCount}`;
