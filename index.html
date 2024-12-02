@@ -6,21 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WhoWht's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1>Welcome to WhoWht's Portfolio</h1>
+      <h1 id="welcome-text"></h1>
+      <button id="theme-toggle" class="btn">Dark/Light Mode</button>
     </header>
 
     <main>
       <button class="btn" id="projects-btn">Projects</button>
       <button class="btn" id="social-btn">Social Links</button>
+      <button class="btn" id="resume-btn">Download Resume</button>
+      <section id="timeline" class="timeline">
+        <h2>My Journey</h2>
+        <div class="timeline-content">
+          <div class="timeline-item">
+            <h3>2021</h3>
+            <p>Started my coding journey.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>2022</h3>
+            <p>Completed first major project.</p>
+          </div>
+        </div>
+      </section>
+      <section id="testimonials" class="carousel">
+        <h2>What People Say</h2>
+        <div class="carousel-content">
+          <p>"An amazing developer!" - Client A</p>
+          <p>"Creative and efficient work!" - Client B</p>
+        </div>
+      </section>
     </main>
 
     <footer>
       <p>© 2024 WhoWht. All rights reserved.</p>
+      <p id="visitor-counter">Visitors: 0</p>
     </footer>
   </div>
 
