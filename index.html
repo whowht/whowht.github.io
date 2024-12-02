@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Firebase Site</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js" defer></script>
+  <title>WhoWht's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Welcome to My Dynamic Website</h1>
+  <div class="container">
+    <header>
+      <h1>Welcome to WhoWht's Portfolio</h1>
+    </header>
 
-  <!-- Authentication Section -->
-  <div id="auth">
-    <h2>Sign In</h2>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="signup">Sign Up</button>
-    <button id="login">Login</button>
-    <button id="logout">Logout</button>
+    <main>
+      <button class="btn" id="projects-btn">Projects</button>
+      <button class="btn" id="social-btn">Social Links</button>
+    </main>
+
+    <footer>
+      <p>© 2024 WhoWht. All rights reserved.</p>
+    </footer>
   </div>
 
-  <!-- Content Section -->
-  <div id="content">
-    <h2>Database Content</h2>
-    <textarea id="data" placeholder="Add some text"></textarea>
-    <button id="save">Save to Firestore</button>
-    <div id="output"></div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
   </div>
+
+  <script src="scripts.js"></script>
 </body>
+
 </html>
