@@ -9,35 +9,33 @@ const typeText = () => {
 };
 typeText();
 
+const visitCountElement = document.getElementById("visit-count");
+const visits = localStorage.getItem("visits");
+const updatedVisits = visits ? parseInt(visits) + 1 : 1;
+localStorage.setItem("visits", updatedVisits);
+visitCountElement.textContent = updatedVisits;
+
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-  themeToggle.textContent = document.body.classList.contains("light-mode") ? "🌙" : "☀️";
+  const isLightMode = document.body.classList.toggle("light-mode");
+  themeToggle.textContent = isLightMode ? "🌙" : "☀️";
 });
 
 document.getElementById("projects-btn").addEventListener("click", () => {
-  const passcode = prompt("Enter the passcode to access the projects:");
-  if (passcode === "7823") {
-    window.open("https://github.com/WhoWht", "_blank");
-  } else {
-    alert("Incorrect passcode!");
-  }
+  window.location.href = "./projects.html";
 });
 
 document.getElementById("social-btn").addEventListener("click", () => {
   const socialLinks = `
     <h2>Connect with me:</h2>
-    <p><a href="https://facebook.com" target="_blank">Facebook</a></p>
-    <p><a href="https://instagram.com" target="_blank">Instagram</a></p>
-    <p><a href="https://discord.com" target="_blank">Discord</a></p>
-    <button class="close-btn" id="close-social">Close</button>
+    <p><a href="https://discord.com" target="_blank">Discord<img src="discord-logo.png"></a></p>
+    <p><a href="https://facebook.com" target="_blank">Facebook<img src="facebook-logo.png"></a></p>
+    <p><a href="https://instagram.com" target="_blank">Instagram<img src="instagram-logo.png"></a></p>
   `;
   openModal(socialLinks);
 
-  document.getElementById("close-social").addEventListener("click", closeModal);
+  document.addEventListener("click", closeModalOnOutsideClick);
 });
-
-document.getElementById("close-modal").addEventListener("click", closeModal);
 
 function openModal(content) {
   const modal = document.getElementById("modal");
@@ -48,6 +46,14 @@ function openModal(content) {
 function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.add("hidden");
+  document.removeEventListener("click", closeModalOnOutsideClick);
+}
+
+function closeModalOnOutsideClick(event) {
+  const modal = document.querySelector(".modal-content");
+  if (!modal.contains(event.target) && !event.target.closest("#social-btn")) {
+    closeModal();
+  }
 }
 
 const canvas = document.getElementById("background-canvas");
@@ -78,10 +84,7 @@ const mouse = Matter.Mouse.create(canvas);
 const mouseConstraint = Matter.MouseConstraint.create(engine, { mouse });
 
 Matter.World.add(engine.world, [mouseConstraint]);
-
-const objects = Array.from({ length: 50 }, createBall);
-Matter.World.add(engine.world, objects);
-
+Matter.World.add(engine.world, Array.from({ length: 50 }, createBall));
 Matter.Engine.run(engine);
 Matter.Render.run(render);
 
