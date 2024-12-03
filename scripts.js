@@ -24,19 +24,21 @@ document.getElementById("projects-btn").addEventListener("click", () => {
   }
 });
 
+// Social Links Modal
 document.getElementById("social-btn").addEventListener("click", () => {
   const socialLinks = `
     <h2>Connect with me:</h2>
     <p><a href="https://facebook.com" target="_blank">Facebook</a></p>
     <p><a href="https://instagram.com" target="_blank">Instagram</a></p>
     <p><a href="https://discord.com" target="_blank">Discord</a></p>
+    <button class="close-btn" id="close-social">Close</button>
   `;
   openModal(socialLinks);
+
+  document.getElementById("close-social").addEventListener("click", closeModal);
 });
 
-document.getElementById("close-modal").addEventListener("click", () => {
-  closeModal();
-});
+document.getElementById("close-modal").addEventListener("click", closeModal);
 
 function openModal(content) {
   const modal = document.getElementById("modal");
