@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WhoWht's Portfolio</title>
+  <title>WhoWht</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <canvas id="background-canvas"></canvas>
+
   <div class="container">
     <header>
       <h1 id="welcome-text"></h1>
@@ -19,11 +21,11 @@
       <button class="btn" id="projects-btn">Projects</button>
       <button class="btn" id="social-btn">Social Links</button>
     </main>
-
-    <footer>
-      <p>© 2024 WhoWht. All rights reserved.</p>
-    </footer>
   </div>
+
+  <footer>
+    <p>© 2024 WhoWht. All rights reserved.</p>
+  </footer>
 
   <div id="modal" class="modal hidden">
     <div class="modal-content">
@@ -34,6 +36,7 @@
 
   <button id="theme-toggle" class="theme-btn">☀️</button>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="scripts.js"></script>
 </body>
 
