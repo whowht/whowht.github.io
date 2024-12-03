@@ -17,7 +17,7 @@ themeToggle.addEventListener("click", () => {
 
 document.getElementById("projects-btn").addEventListener("click", () => {
   const passcode = prompt("Enter the passcode to access the projects:");
-  if (passcode === "1234") {
+  if (passcode === "7823") {
     window.open("https://github.com/WhoWht", "_blank");
   } else {
     alert("Incorrect passcode!");
@@ -30,8 +30,11 @@ document.getElementById("social-btn").addEventListener("click", () => {
     <p><a href="https://facebook.com" target="_blank">Facebook</a></p>
     <p><a href="https://instagram.com" target="_blank">Instagram</a></p>
     <p><a href="https://discord.com" target="_blank">Discord</a></p>
+    <button class="close-btn" id="close-social">Close</button>
   `;
   openModal(socialLinks);
+
+  document.getElementById("close-social").addEventListener("click", closeModal);
 });
 
 document.getElementById("close-modal").addEventListener("click", closeModal);
