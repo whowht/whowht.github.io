@@ -19,6 +19,7 @@ body {
   color: var(--light-text);
 }
 
+/* Canvas Background */
 #background-canvas {
   position: fixed;
   top: 0;
@@ -28,6 +29,7 @@ body {
   z-index: -1;
 }
 
+/* Container */
 .container {
   display: flex;
   flex-direction: column;
@@ -59,6 +61,7 @@ header h1 {
   }
 }
 
+/* Footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -68,6 +71,7 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Buttons */
 .btn {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -109,6 +113,40 @@ footer {
 .theme-btn:hover {
   transform: scale(1.1);
   background-color: #0072d6;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .close-btn {
