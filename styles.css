@@ -123,3 +123,21 @@ header h1 {
   color: var(--text-color);
   cursor: pointer;
 }
+
+.close-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #0072d6;
+  transform: scale(1.05);
+}
